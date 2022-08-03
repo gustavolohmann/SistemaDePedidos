@@ -1,0 +1,219 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+
+}
+
+@media (min-width: 768px) {
+
+    .hidden_menu_mobile,
+    .show_menu {
+        display: none;
+    }
+}
+
+/*
+    Tamanho de tela medio 768px
+*/
+@media (max-width: 768px) {
+    body {
+        font-size: 12px;
+    }
+
+    .menu {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        display: none;
+    }
+
+    .menu ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .menu ul li {
+        color: #1c1c1c;
+        width: 100%;
+    }
+
+    .container_table_pedido {
+        width: 90%;
+        height: 100%;
+    }
+
+    .table_pedido {
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        overflow-x: auto;
+    }
+
+    .tbody tr {
+        border-bottom: 10px solid;
+    }
+
+    .tbody tr td {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+    }
+
+    table thead {
+        display: none;
+    }
+
+    .show_menu button {
+        width: 50px;
+        height: 50px;
+        border: 1px solid transparent;
+        border-radius: 50px;
+        font-size: 25px;
+    }
+
+    .hidden_menu_mobile {
+        position: absolute;
+        left: 0;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        width: 10%;
+        height: 100%;
+    }
+
+    .hidden_menu_mobile button {
+        width: 50px;
+        height: 50px;
+        border: none;
+        border-radius: 50px;
+        background-color: transparent;
+        color: #1c1c1c;
+        font-size: 25px;
+    }
+
+    /*hidden menu*/
+
+    .hidden {
+        display: block;
+    }
+
+    /*Cadstro cliente*/
+    .container_form_cliente {
+        height: 100%;
+    }
+
+    .formPrestador {
+        height: 100%;
+    }
+
+    .form_pedido {
+        height: 100%;
+    }
+
+    #detalhesPedido {
+        width: 500px;
+    }
+
+    /*pesquisa pedido*/
+    .pesquisa {
+        display: flex;
+        flex-direction: column;
+    }
+
+    /*
+        relatorio
+    */
+    .tbody_relatorio_xls table tbody tr {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        border-bottom: 1px solid;
+        padding: 10px;
+    }
+
+    .tbody_relatorio_xls table tbody tr td:nth-child(5) {
+        width: 30%;
+    }
+
+    .tbody_relatorio_xls table tbody tr td:nth-child(6) {
+        width: 30%;
+    }
+
+    .tbody_relatorio_xls table tbody tr td:nth-child(10) {
+        width: 100%;
+    }
+}
+
+@media (max-width: 414px) {
+    .menu {
+        position: fixed;
+    }
+
+    .button_pesquisa_relatorio {
+        flex-direction: column;
+    }
+
+    #pf_button_relatorio {
+        width: 200px;
+    }
+
+    .pesquisa {
+
+        padding: 10px 0;
+    }
+
+    .pesquisa label {
+        display: none;
+    }
+
+    #detalhesPedido {
+        width: 350px;
+    }
+
+    .hidden {
+        position: absolute;
+        width: 100%;
+        height: 500px;
+    }
+
+    #fecha_modal {
+        position: absolute;
+        left: 0;
+        top: 0;
+    }
+
+    .modal {
+        width: 90%;
+    }
+}
+
+@media (max-width: 375px) {
+    .menu {
+        position: fixed;
+    }
+
+    .form_cliente input {
+        width: 300px;
+    }
+
+    .formPrestador input {
+        width: 300px;
+    }
+
+    .form_pedido input {
+        width: 300px;
+    }
+
+    #detalhesPedido {
+        width: 300px;
+    }
+}

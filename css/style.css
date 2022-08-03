@@ -1,0 +1,967 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+    text-decoration: none;
+    color: inherit;
+}
+
+/* header */
+
+body {
+    background-color: #F5F5F5;
+    overflow-x: hidden;
+}
+
+/* login */
+.access_denied {
+    position: absolute;
+    top: 0;
+    margin-top: 50px;
+    width: auto;
+    height: auto;
+    background-color: #D93838;
+    color: #ffff;
+    padding: 20px;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.container_login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 100vh;
+    margin: 0 auto;
+    background-color: #fff;
+}
+
+.login_ {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    width: 25%;
+    height: 50%;
+    border: 5px solid #dcdcdc;
+    border-radius: 5px;
+    box-shadow: 0 0 1em #dcdcdc;
+    box-sizing: content-box;
+}
+
+.login_ input {
+    width: 300px;
+    height: 40px;
+    border: 3px solid #dcdcdc;
+    border-radius: 5px;
+    padding: 0 10px;
+}
+
+#acess_ {
+    width: 300px;
+    height: 50px;
+    background-color: #2A71C1;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    color: #fff;
+    transition: .2s;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: .2s;
+}
+
+#acess_:hover {
+    background-color: #205592;
+}
+
+/* fim do login */
+.container_main {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+    align-items: center;
+    width: 100%;
+    height: 100px;
+    background-color: #FFF;
+}
+
+.destroy_sessio button {
+    width: 100px;
+    color: #fff;
+    background-color: #D93838;
+    border: none;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.destroy_sessio button:hover {
+    background-color: #d36161;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 10vh;
+    background-color: #fff;
+    color: #fff;
+}
+
+.menu ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    padding: 0 50px;
+}
+
+.menu ul li {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+    transition: .3s;
+    text-align: center;
+    cursor: pointer;
+    color: #d0d0d0;
+    padding: 0 50px;
+    height: 100%;
+    transition: .2s;
+    font-size: 20px;
+}
+
+.menu ul li:hover {
+    color: #1c1c1c;
+    border-bottom: 3px solid;
+}
+
+.menu ul li a i {
+    display: block;
+}
+
+
+/*fim header*/
+/*-----------relatorio----------------*/
+/*-----------------pesquisa---------------------*/
+.container_table_pedido {
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    margin-top: 30px;
+}
+
+table {
+    width: 100%;
+}
+
+th,
+td {
+
+    text-align: center;
+    vertical-align: center;
+    height: 10vh;
+    border-collapse: collapse;
+    padding: 0 10px;
+    width: 100px;
+}
+
+tbody tr {
+    transition: .2s;
+    cursor: pointer;
+}
+
+tbody tr:hover {
+    background-color: #EFEFEF;
+}
+
+th {
+    color: #1c1c1c;
+}
+
+.verifyStatus {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    align-items: center;
+}
+
+#button_status {
+    background-color: #2A71C1;
+    border: 1px solid #2A71C1;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100px;
+    height: 30px;
+    transition: .2s;
+    color: #fff;
+    font-size: 20px;
+}
+
+.button_status:hover {
+    background-color: #205592;
+}
+
+/*---button finaliza pedido---*/
+.finaliza_pedido {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button_finaliza_pedido:hover {
+    background-color: #205592;
+}
+
+/*modal na tela de relatorio*/
+.container_modal {
+    position: fixed;
+    overflow: hidden;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+    opacity: 0;
+    z-index: -1000;
+}
+
+.classOpenModal {
+    animation: animationModal .2s forwards;
+}
+
+@keyframes animationModal {
+    to {
+        opacity: 1;
+        z-index: 1000;
+    }
+}
+
+.modal {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 5px;
+    overflow: auto;
+    width: 95%;
+    height: 70%;
+    background-color: #fff;
+}
+
+#delete_order {
+    background-color: #d36161;
+    border: 1px solid #d36161;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100px;
+    height: 30px;
+    transition: .2s;
+    color: #fff;
+    font-weight: bold;
+}
+
+.container_inside_of_modal {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    font-weight: bold;
+}
+
+.id_inside_of_modal {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 20vh;
+    padding: 0 10px;
+    font-size: 30px;
+    background-color: #EFEFEF;
+}
+
+.details_inside_of_modal {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 60%;
+}
+
+.descricao_modal_details {
+    padding: 0 10px;
+    width: 100%;
+    height: 40%;
+}
+
+.hidden {
+    position: absolute;
+    padding: 10px 50px;
+}
+
+#fecha_modal {
+    width: 30px;
+    height: 30px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: .2s;
+    background-color: transparent;
+    text-align: center;
+    color: #fff;
+    font-size: 26px;
+}
+
+/*formulario de casdastro de cliente*/
+.msn_alert_client {
+    display: block;
+    margin: 0 auto;
+    width: auto;
+    height: auto;
+    z-index: 1000;
+}
+
+.msn {
+    width: auto;
+    height: auto;
+    border: 1px solid;
+    text-align: center;
+    padding: 20px;
+    background-color: #5cc645;
+    color: #fff;
+    font-weight: bold;
+    border-radius: 5px;
+}
+
+.msn_denied_client {
+    width: auto;
+    height: auto;
+    border: 1px solid;
+    text-align: center;
+    padding: 20px;
+    background-color: #d36161;
+    color: #fff;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.container_form_cliente {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    margin-top: 30px;
+    border-radius: 5px;
+}
+
+.form_cliente {
+    background-color: #fff;
+}
+
+#titulo_form_1 {
+    color: #000;
+    padding: 20px 20px;
+}
+
+.cad_cliente {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+label {
+    display: block;
+    padding: 10px 0;
+}
+
+.cad_cliente input {
+    width: 350px;
+    height: 50px;
+    padding: 0 10px;
+    border: 3px solid rgb(217, 217, 217);
+    border-radius: 5px;
+}
+
+.buscar_cliente {
+    display: block;
+}
+
+.submit {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 20vh;
+}
+
+#button_save_cliente {
+    width: 300px;
+    height: 50px;
+    background-color: #2A71C1;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    color: #fff;
+    transition: .2s;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+#button:hover {
+    background-color: #205592;
+}
+
+/*cadastro prestador*/
+.msn_alert {
+    display: block;
+    margin: 0 auto;
+    width: auto;
+    height: auto;
+    z-index: 1000;
+
+}
+
+.msn_prestador {
+    width: auto;
+    height: auto;
+    border: 1px solid;
+    text-align: center;
+    padding: 20px;
+    background-color: #5cc645;
+    color: #fff;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.msn_prestador_denied {
+    width: auto;
+    height: auto;
+    border: 1px solid;
+    text-align: center;
+    padding: 20px;
+    background-color: #d36161;
+    color: #fff;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+.container_prestador {
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    margin-top: 30px;
+    border-radius: 5px;
+}
+
+.formPrestador {
+    margin: 0 auto;
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    margin-top: 30px;
+}
+
+#titulo_form_prestador {
+    color: #000;
+    padding: 20px 20px;
+}
+
+.cad_prestador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+.cad_prestador input {
+    width: 350px;
+    height: 50px;
+    padding: 0 10px;
+    border: 3px solid rgb(217, 217, 217);
+    border-radius: 5px;
+}
+
+.button_prestador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20vh;
+}
+
+.button_prestador button {
+    width: 300px;
+    height: 50px;
+    background-color: #2A71C1;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    color: #fff;
+    transition: .2s;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.button_prestador button:hover {
+    background-color: #205592;
+}
+
+/*form cadastro de pedido*/
+.msn_pedido {
+    position: absolute;
+    top: 0;
+    width: auto;
+    height: auto;
+    border: 1px solid;
+    margin: 100px auto;
+    text-align: center;
+    padding: 20px;
+    background-color: #5cc645;
+    color: #fff;
+}
+
+.container_form_pedido {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    background-color: #fff;
+    margin-top: 30px;
+}
+
+.form_pedido {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-height: 100%;
+}
+
+/*Seção de busca no banco de dados*/
+
+.open_modal_inside_pedido {
+    padding: 20px;
+    width: 100%;
+}
+
+.open_modal_inside_pedido button {
+    float: right;
+    width: 40px;
+    height: 40px;
+    font-size: 20px;
+    color: #fff;
+    border: none;
+    border-radius: 50px;
+    background-color: #2A71C1;
+    transition: .2s;
+    cursor: pointer;
+}
+
+.open_modal_inside_pedido button:hover {
+    background-color: #205592;
+}
+
+.hidden_modal_pedido {
+    padding: 20px;
+}
+
+.hidden_modal_pedido button {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50px;
+    color: #fff;
+    background-color: transparent;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+.error_search_client {
+    margin: 0 auto;
+    width: 50%;
+    height: auto;
+    background-color: #D93838;
+    color: #ffff;
+    padding: 20px;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.constainer_pesquisa_cliente {
+    display: block;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(#000000b3, #000000b3);
+    opacity: 0;
+    z-index: -10000;
+}
+.class_animation_modal_search_client{
+    animation:  animation_modal_search_client_and_prestador .2s forwards;
+}
+/*button_open_modal_inside_pedido*/
+@keyframes animation_modal_search_client_and_prestador {
+    to{
+        opacity: 1;
+        z-index: 10000;
+    }
+}
+.container_search_on_db {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    gap: 10px;
+    margin: 50px auto;
+    background-color: #FFF;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.first_child_search_on_db,
+.second_search_on_db {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.container_search_on_db input {
+    width: 350px;
+    height: 50px;
+    padding: 0 10px;
+    border: 3px solid rgb(217, 217, 217);
+    border-radius: 5px;
+}
+
+.container_search_on_db label {
+    padding: 0;
+}
+
+.buttonCliente,
+.buttonPrestador {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 10vh;
+}
+
+.buttonCliente button,
+.buttonPrestador button {
+    width: 300px;
+    height: 35px;
+    background-color: #2A71C1;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    color: #fff;
+    transition: .2s;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.buttonCliente button:hover,
+.buttonPrestador button:hover {
+    background-color: #205592;
+}
+
+.container_table_ {
+    width: 100%;
+    background-color: #fff;
+}
+
+/**-------------------*/
+
+.table input,
+.tablePrestador input {
+    width: 15px;
+    height: 15px;
+    border: 3px solid rgb(217, 217, 217);
+    border-radius: 5px;
+}
+
+/*----------------------------*/
+.pedido {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 50px;
+    margin-top: 50px;
+}
+
+.pedido input {
+    width: 350px;
+    height: 50px;
+    padding: 0 10px;
+    border: 3px solid rgb(217, 217, 217);
+    border-radius: 5px;
+}
+
+#detalhesPedido {
+    width: 750px;
+    height: 50px;
+}
+
+.button_pedido {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20vh;
+}
+
+.button_pedido button {
+    width: 300px;
+    height: 50px;
+    background-color: #2A71C1;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    color: #fff;
+    transition: .2s;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.button_pedido button:hover {
+    background-color: #205592;
+}
+
+/*---modal de status de pagamento---*/
+
+.container_modal_finaliza {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    z-index: -10000;
+}
+
+.anamtion_hidden_container_modal_finaliza {
+    animation: hidden_container_modal_finaliza .2s forwards;
+}
+
+@keyframes hidden_container_modal_finaliza {
+    to {
+        opacity: 1;
+        z-index: 10000;
+    }
+}
+
+.container_change_time {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+    height: 50%;
+    background-color: #ffff;
+    border: none;
+    border-radius: 5px;
+    gap: 20px;
+}
+
+.container_change_time label {
+    padding: 0;
+}
+
+.container_change_time input {
+    width: 350px;
+    height: 50px;
+    padding: 0 10px;
+    border: 3px solid rgb(217, 217, 217);
+    border-radius: 5px;
+}
+
+.hidden_modal_finaliza_pedido_ {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+#hidden_modal_finaliza_pedido {
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50px;
+    background-color: transparent;
+    color: #1c1c1c;
+    font-size: 30px;
+    cursor: pointer;
+    color: #fff;
+
+}
+
+#open_menu_finaliza_pedido {
+    background-color: #2A71C1;
+    border: 1px solid #2A71C1;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100px;
+    height: 30px;
+    transition: .2s;
+    color: #fff;
+    font-weight: bold;
+}
+
+.msn_data {
+    width: auto;
+    height: auto;
+    color: #fff;
+    background-color: #71bf60;
+    padding: 20px;
+    border-radius: 5px;
+}
+
+.button_finaliza_pedido {
+    width: 300px;
+    height: 50px;
+    background-color: #2A71C1;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    color: #fff;
+    transition: .2s;
+    cursor: pointer;
+    text-transform: uppercase;
+}
+
+.container_modal_pagamento {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: -100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+}
+
+.classOpenModalPagamento {
+    animation: animationModalPagamento .2s forwards;
+}
+
+.modal_pagamento {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px auto;
+    border-radius: 5px;
+    overflow: auto;
+    width: 40%;
+    height: 70%;
+    background-color: #fff;
+}
+
+#fecha_modal_pagamento {
+    width: 30px;
+    height: 30px;
+    border: 1px solid #fff;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: .2s;
+    background-color: #2A71C1;
+    text-align: center;
+    color: #fff;
+}
+
+#fecha_modal_pagamento:hover {
+    background-color: #205592;
+}
+
+@keyframes animationModalPagamento {
+    to {
+        top: 0;
+    }
+}
+
+/*---fim do status de pagamento ---*/
+
+/*---Relatorio---*/
+.msn_error_report {
+    width: 50%;
+    height: auto;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.msn_report_denied {
+    width: auto;
+    height: auto;
+    border: 1px solid;
+    text-align: center;
+    padding: 20px;
+    background-color: #d36161;
+    color: #fff;
+    border-radius: 5px;
+}
+
+.titulo_form_relatorio {
+    color: #000;
+    padding: 20px 20px;
+}
+
+.relatorio {
+    margin: 0 auto;
+    width: auto;
+    height: auto;
+    background-color: #fff;
+    margin-top: 30px;
+}
+
+._pesquisa_relatorio {
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    padding: 30px;
+    gap: 10px;
+}
+
+._pesquisa_relatorio input {
+    width: 250px;
+    height: 40px;
+    border: 3px solid #dcdcdc;
+    border-radius: 5px;
+    padding: 0 10px;
+
+}
+
+._pesquisa_relatorio button {
+    margin: 10px;
+    width: 35px;
+    height: 35px;
+    border: 1px solid #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: .2s;
+    background-color: #2A71C1;
+    text-align: center;
+    color: #fff;
+}
+
+._pesquisa_relatorio button:hover {
+    background-color: #205592;
+}
